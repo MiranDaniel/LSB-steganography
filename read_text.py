@@ -1,10 +1,19 @@
 from PIL import Image
 from lsb import extract
 import numpy as np
+import argparse
 
-INPUT_IMAGE = "./sample_images/lichtenstein_message.png"
-START_BIT = 0
-END_BIT = 0
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+parser.add_argument("src", help="Source location")
+parser.add_argument("--startbit", "-s", help="Start bit plane", default=0, required=False)
+parser.add_argument("--endbit", "-e", help="End bit plane", default=0, required=False)
+args = parser.parse_args()
+config = vars(args)
+
+INPUT_IMAGE = config["src"]
+START_BIT = int(config["startbit"])
+END_BIT = int(config["endbit"])
 
 def bitstring_to_bytes(s):
     return int(s, 2).to_bytes((len(s) + 7) // 8, byteorder='big')

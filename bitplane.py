@@ -2,9 +2,15 @@ from lsb import extract
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
+import argparse
 
-#INPUT_IMAGE = "./sample_images/cat.png"
-INPUT_IMAGE = "./sample_images/cat.png"
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+parser.add_argument("src", help="Source location")
+args = parser.parse_args()
+config = vars(args)
+
+INPUT_IMAGE = config["src"]
 
 
 img = Image.open(INPUT_IMAGE)

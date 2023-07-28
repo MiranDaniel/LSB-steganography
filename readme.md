@@ -23,15 +23,26 @@ Original image               | Red secret image              | Green secret imag
 
 ### bitplane.py
 
-Show an interactive Matplotlib plot showing the split bit planes for each channel (and the combined result) for the `INPUT_IMAGE`.
+Show an interactive Matplotlib plot showing the split bit planes for each channel (and the combined result).
+
+`python3 bitplane.py ./sample_images/cat.png`
 
 ### combine_bitplanes.py
 
-Splits all bitplanes and combines the chosen ones into an image that is saved to `output/`. 
+Splits all bitplanes and combines the chosen ones into an image.
+
+`python3 combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2`
+`python3 combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2 -c true`
 
 ### read_text.py
 
-Reads text stored in the `INPUT_IMAGE`.
+`python3 read_text.py ./output/lichtenstein.png`
+`python3 read_text.py ./output/lichtenstein.png -s 0 -e 1`
+
+### write_text.py
+
+`python3 write_text.py ./sample_images/lichtenstein.png ./output/lichtenstein.png "Hello, world!"`
+
 
 ### 
 
