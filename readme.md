@@ -32,11 +32,13 @@ Show an interactive Matplotlib plot showing the split bit planes for each channe
 Splits all bitplanes and combines the chosen ones into an image.
 
 `python3 combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2`
+
 `python3 combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2 -c true`
 
 ### read_text.py
 
 `python3 read_text.py ./output/lichtenstein.png`
+
 `python3 read_text.py ./output/lichtenstein.png -s 0 -e 1`
 
 ### write_text.py
