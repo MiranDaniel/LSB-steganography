@@ -1,4 +1,4 @@
-from lsb import read_text
+from lsb import image_text_utils
 import argparse
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -15,5 +15,5 @@ INPUT_IMAGE = config["src"]
 START_BIT = int(config["startbit"])
 END_BIT = int(config["endbit"])
 
-text = read_text.read(INPUT_IMAGE, START_BIT, END_BIT)
+text = image_text_utils.read(INPUT_IMAGE, START_BIT, END_BIT)
 print(text)
