@@ -44,8 +44,6 @@ Splits all bitplanes and combines the chosen ones into an image.
 `python3 write_text.py ./sample_images/lichtenstein.png ./output/lichtenstein.png "Hello, world!"`
 
 
-### 
-
 ## License
 
 ![GPLv3](https://www.gnu.org/graphics/gplv3-with-text-136x68.png)
