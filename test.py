@@ -35,7 +35,7 @@ class TestSum(unittest.TestCase):
         for i in (True, False):
             for j in (True, False):
                 for upper in range(0,7):
-                    lsb.combine_bitplanes.run(TestImage.CAT.value, 0, upper, i, j, "./output/")
+                    lsb.bitplane.combine(TestImage.CAT.value, 0, upper, i, j, "./output/")
                     for i in files:
                         assert os.path.isfile(f"./output/secret_{i}.png")
                         im = Image.open(f"./output/secret_{i}.png")
@@ -49,11 +49,11 @@ class TestSum(unittest.TestCase):
 
     def test_combine_bitplanes_invalid_range(self):
         try:
-            lsb.combine_bitplanes.run(TestImage.CAT.value, 0, 16, True, False, "./output/")
+            lsb.bitplane.combine(TestImage.CAT.value, 0, 16, True, False, "./output/")
         except IndexError:
             ...
         try:
-            lsb.combine_bitplanes.run(TestImage.CAT.value, 8, 6, True, False, "./output/")
+            lsb.bitplane.combine(TestImage.CAT.value, 8, 6, True, False, "./output/")
         except Warning:
             ...
 

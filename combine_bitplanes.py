@@ -1,4 +1,4 @@
-from lsb import combine_bitplanes
+from lsb import bitplane
 import argparse
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -27,4 +27,4 @@ COLOR = config["color"]
 
 OUTPUT_DIR = config["out"]
 
-combine_bitplanes.run(INPUT_IMAGE, START_BIT, END_BIT, SAVE_EACH_BIT, COLOR, OUTPUT_DIR)
+bitplane.combine(INPUT_IMAGE, START_BIT, END_BIT, SAVE_EACH_BIT, COLOR, OUTPUT_DIR)
