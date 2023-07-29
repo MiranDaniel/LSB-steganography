@@ -5,6 +5,7 @@ import numpy as np
 import os.path
 from PIL import Image
 
+
 class TestImage(Enum):
     CAT = "./sample_images/cat.png"
     LICHTENSEIN = "./sample_images/lichtenstein.png"
@@ -31,11 +32,13 @@ class TestSum(unittest.TestCase):
             return
 
     def test_combine_bitplanes(self):
-        files = {"red","green","blue","combined"}
+        files = {"red", "green", "blue", "combined"}
         for i in (True, False):
             for j in (True, False):
-                for upper in range(0,7):
-                    lsb.bitplane.combine(TestImage.CAT.value, 0, upper, i, j, "./output/")
+                for upper in range(0, 7):
+                    lsb.bitplane.combine(
+                        TestImage.CAT.value, 0, upper, i, j, "./output/"
+                    )
                     for i in files:
                         assert os.path.isfile(f"./output/secret_{i}.png")
                         im = Image.open(f"./output/secret_{i}.png")
@@ -56,7 +59,6 @@ class TestSum(unittest.TestCase):
             lsb.bitplane.combine(TestImage.CAT.value, 8, 6, True, False, "./output/")
         except Warning:
             ...
-
 
 
 if __name__ == "__main__":

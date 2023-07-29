@@ -2,8 +2,10 @@ from PIL import Image
 import numpy as np
 import argparse
 
+
 def _write_bit_plane(image_array, bit_plane_array, plane_number):
     return (image_array & ~(1 << plane_number)) | (bit_plane_array << plane_number)
+
 
 def write(input_image, message, output):
     img = Image.open(input_image)

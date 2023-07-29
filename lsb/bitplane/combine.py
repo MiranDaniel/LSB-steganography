@@ -25,7 +25,9 @@ def histogram_equalization(combined_channel):
 
 def combine(input_image, start_bit, end_bit, save_each, color, output):
     if start_bit > end_bit:
-        raise Warning("The start bit is larger than the endbit, that's not what you want")
+        raise Warning(
+            "The start bit is larger than the endbit, that's not what you want"
+        )
 
     img = Image.open(input_image)
     data = np.array(img)
