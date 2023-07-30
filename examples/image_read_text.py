@@ -1,5 +1,12 @@
-from lsb import image_text_utils
+import sys
+import os
+
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(parent_dir)
+
+from lsb import image
 import argparse
+
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
@@ -15,5 +22,5 @@ INPUT_IMAGE = config["src"]
 START_BIT = int(config["startbit"])
 END_BIT = int(config["endbit"])
 
-text = image_text_utils.read(INPUT_IMAGE, START_BIT, END_BIT)
+text = image.text.read(INPUT_IMAGE, START_BIT, END_BIT)
 print(text)

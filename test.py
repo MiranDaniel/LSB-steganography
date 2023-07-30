@@ -15,19 +15,19 @@ class TestImage(Enum):
 
 class TestSum(unittest.TestCase):
     def test_bitplane_analyzer_plot(self):
-        result = lsb.bitplane.analyze(TestImage.CAT.value)
+        result = lsb.image.bitplane.analyze(TestImage.CAT.value)
         assert type(result) is np.ndarray
 
     def test_bitplane_analyzer_savefig(self):
         for i in {TestImage.CAT, TestImage.LICHTENSEIN, TestImage.TREES}:
-            lsb.bitplane.analyze(i.value)
+            lsb.image.bitplane.analyze(i.value)
             assert os.path.isfile("./output/bitplanes.png")
             im = Image.open("./output/bitplanes.png")
             im.verify()
 
     def test_bitplane_analyzer_invalid_file(self):
         try:
-            lsb.bitplane.analyze(TestImage.NOT_EXIST.value)
+            lsb.image.bitplane.analyze(TestImage.NOT_EXIST.value)
         except FileNotFoundError:
             return
 
@@ -36,7 +36,7 @@ class TestSum(unittest.TestCase):
         for i in (True, False):
             for j in (True, False):
                 for upper in range(0, 7):
-                    lsb.bitplane.combine(
+                    lsb.image.bitplane.combine(
                         TestImage.CAT.value, 0, upper, i, j, "./output/"
                     )
                     for i in files:
@@ -46,17 +46,17 @@ class TestSum(unittest.TestCase):
 
     def test_combine_bitplanes_invalid_file(self):
         try:
-            lsb.bitplane.analyze(TestImage.NOT_EXIST.value)
+            lsb.image.bitplane.analyze(TestImage.NOT_EXIST.value)
         except FileNotFoundError:
             return
 
     def test_combine_bitplanes_invalid_range(self):
         try:
-            lsb.bitplane.combine(TestImage.CAT.value, 0, 16, True, False, "./output/")
+            lsb.image.bitplane.combine(TestImage.CAT.value, 0, 16, True, False, "./output/")
         except IndexError:
             ...
         try:
-            lsb.bitplane.combine(TestImage.CAT.value, 8, 6, True, False, "./output/")
+            lsb.image.bitplane.combine(TestImage.CAT.value, 8, 6, True, False, "./output/")
         except Warning:
             ...
 

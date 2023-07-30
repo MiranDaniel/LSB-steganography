@@ -25,25 +25,25 @@ Original image               | Red secret image              | Green secret imag
 
 Show an interactive Matplotlib plot showing the split bit planes for each channel (and the combined result).
 
-`python3 bitplane.py ./sample_images/cat.png`
+`python3 examples/image_bitplane.py ./sample_images/cat.png`
 
 ### combine_bitplanes.py
 
 Splits all bitplanes and combines the chosen ones into an image.
 
-`python3 combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2`
+`python3 examples/image_combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2`
 
-`python3 combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2 -c true`
+`python3 examples/image_combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2 -c true`
 
 ### read_text.py
 
-`python3 read_text.py ./output/lichtenstein.png`
+`python3 examples/image_read_text.py ./output/lichtenstein.png`
 
-`python3 read_text.py ./output/lichtenstein.png -s 0 -e 1`
+`python3 examples/image_read_text.py ./output/lichtenstein.png -s 0 -e 1`
 
 ### write_text.py
 
-`python3 write_text.py ./sample_images/lichtenstein.png ./output/lichtenstein.png "Hello, world!"`
+`python3 examples/image_write_text.py ./sample_images/lichtenstein.png ./output/lichtenstein.png "Hello, world!"`
 
 
 ## License
@@ -62,11 +62,11 @@ Splits all bitplanes and combines the chosen ones into an image.
 
     Copyright (C) dan[]fruhauf[]dev
 
-## Image attribution
+## Test file attribution
 
 - Most images from `sample_images/` are from the USC-SIPI Image Database except for the following:
 - cat.png - https://stackoverflow.com/questions/58194992/python-image-manipulation-using-pillsb
 - lichtenstein*.png - https://commons.wikimedia.org/wiki/File:Lichtenstein_img_processing_test.png
 - trees.png - https://commons.wikimedia.org/wiki/File:Steganography_original.png
 
-
+- Audio from `sample_audio/` is from cs.uic.edu
