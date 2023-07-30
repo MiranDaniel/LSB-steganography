@@ -19,6 +19,13 @@ Original image               | Red secret image              | Green secret imag
 
 ---
 
+![Visible text data in the 0th bit plane](./docs/audio_bitplanes_spectrogram.png)
+> Visible text data in the 0th bit plane, this time in an audio file.
+
+![Hidden data vs original](./docs/spek.png)
+> Hidden data vs original, no audible differences. Not noticable without special tools.
+
+
 ## Usage
 
 ### bitplane.py
