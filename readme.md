@@ -28,13 +28,13 @@ Original image               | Red secret image              | Green secret imag
 
 ## Usage
 
-### bitplane.py
+### image_bitplane.py
 
 Show an interactive Matplotlib plot showing the split bit planes for each channel (and the combined result).
 
 `python3 examples/image_bitplane.py ./sample_images/cat.png`
 
-### combine_bitplanes.py
+### image_combine_bitplanes.py
 
 Splits all bitplanes and combines the chosen ones into an image.
 
@@ -42,15 +42,19 @@ Splits all bitplanes and combines the chosen ones into an image.
 
 `python3 examples/image_combine_bitplanes.py ./sample_images/cat.png -s 0 -e 2 -c true`
 
-### read_text.py
+### image_read_text.py
 
 `python3 examples/image_read_text.py ./output/lichtenstein.png`
 
 `python3 examples/image_read_text.py ./output/lichtenstein.png -s 0 -e 1`
 
-### write_text.py
+### image_write_text.py
 
 `python3 examples/image_write_text.py ./sample_images/lichtenstein.png ./output/lichtenstein.png "Hello, world!"`
+
+### audio_bitplane.py
+
+`python3 examples/audio_bitplane.py ./sample_audio/CantinaBand60.wav`
 
 
 ## License
