@@ -1,6 +1,11 @@
-output/
-output
+output/*.png
+output/*.wav
+output/*.mp4
 __pycache__/
 __pycache__
 .vscode/
 .vscode
+.idea/
+.idea
+venv/
+venv

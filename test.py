@@ -59,6 +59,7 @@ class TestSum(unittest.TestCase):
             lsb.image.bitplane.combine(TestImage.CAT.value, 8, 6, True, False, "./output/")
         except Warning:
             ...
+            print("asd")
 
 
 if __name__ == "__main__":
